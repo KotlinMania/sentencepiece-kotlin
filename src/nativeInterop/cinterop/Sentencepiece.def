@@ -1,0 +1,5 @@
+headers = stddef.h stdint.h sentencepiece_wrapper.h
+headerFilter = *
+compilerOpts = -Isrc/nativeInterop/cinterop
+staticLibraries = sentencepiece_wrapper.a
+noStringConversion = sentencepiece_errno
