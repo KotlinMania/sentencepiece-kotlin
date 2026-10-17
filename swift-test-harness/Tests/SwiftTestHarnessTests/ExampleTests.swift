@@ -6,7 +6,9 @@ import Sentencepiece
 struct SentencepieceExportTests {
     @Test("Sentencepiece swift module imported cleanly")
     func testSwiftModuleLoads() throws {
-        #expect(Bool(true), "Sentencepiece swift module imported cleanly")
+        let span = PieceSpan(begin: 0, end: 5)
+        #expect(span.begin == 0)
+        #expect(span.end == 5)
     }
 }
 #elseif canImport(XCTest)
@@ -15,7 +17,9 @@ import Sentencepiece
 
 final class SentencepieceExportTests: XCTestCase {
     func testSwiftModuleLoads() throws {
-        XCTAssertTrue(true, "Sentencepiece swift module imported cleanly")
+        let span = PieceSpan(begin: 0, end: 5)
+        XCTAssertEqual(span.begin, 0)
+        XCTAssertEqual(span.end, 5)
     }
 }
 #endif
